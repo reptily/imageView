@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ImageView</title>
+    <link href="./font/css/all.css" rel="stylesheet">
     <style>
         html, body {
             width: 100%;
@@ -52,8 +53,31 @@
         }
 
         #image span {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(12, 154, 154, 0.6);
             padding: 5px;
+            display: table-cell;
+            width: 300px;
+            float: left;
+            margin-left: 15px;
+            border-radius: 10px;
+            height: 35px;
+            vertical-align: center;
+            color: #fff;
+            padding-top: 20px;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            font-size: 30px;
+            color: #fff;
+            background: #0C9A9A;
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            opacity: 0.8;
+            margin-right: 15px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -63,10 +87,10 @@
     <div id="buttons">
         <span id="device"></span>
         <span id="date"></span>
-        <button id="btnPrev">&#8656;</button>
-        <button id="btnNext">&#8658;</button>
-        <button id="btnMap">На карте</button>
-        <button id="btnDelete" style="color: red">X</button>
+        <button class="fas fa-arrow-left" id="btnPrev"></button>
+        <button class="fas fa-arrow-right" id="btnNext"></button>
+        <button class="fas fa-map-marker-alt" id="btnMap"></button>
+        <button class="far fa-trash-alt" id="btnDelete"></button>
     </div>
 </div>
 <script src="./renderer.js"></script>

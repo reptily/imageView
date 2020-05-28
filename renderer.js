@@ -110,7 +110,7 @@ function Delete() {
     }
 }
 
-function Map() {
+function showMap() {
     let meta = imagesCache[imagesPoint].meta;
     if (meta.GPS['2'] === undefined) {
         return;
@@ -123,17 +123,18 @@ let items = fs.readdirSync(".");
 
 for (let i = 0; i < items.length; i++) {
     let check = regex.exec(items[i].toString());
-    console.log(regex.exec(items[i]));
     if (check !== null) {
         images.push(items[i]);
     }
 }
 
+/*Сортировка*/
+images = images.sort();
+
 /*Отображаем файл*/
 if (remote.process.argv.length >= 2) {
     let fileShow = remote.process.argv[1].split("\\");
-    fileShow = fileShow[fileShow.length-1];
-    console.log(fileShow);
+    fileShow = fileShow[fileShow.length - 1];
     for (let i = 0; i < images.length; i++) {
         if (images[i] == fileShow) {
             imagesPoint = i;
@@ -163,7 +164,9 @@ window.addEventListener('keydown', (event) => {
 });
 
 /*Реакция на конопки*/
-document.getElementById("btnNext").addEventListener("click", () => Next());
-document.getElementById("btnPrev").addEventListener("click", () => Prev());
-document.getElementById("btnDelete").addEventListener("click", () => Delete());
-document.getElementById("btnMap").addEventListener("click", () => Map());
+window.onload = function() {
+    document.getElementById("btnNext").addEventListener("click", () => Next());
+    document.getElementById("btnPrev").addEventListener("click", () => Prev());
+    document.getElementById("btnDelete").addEventListener("click", () => Delete());
+    document.getElementById("btnMap").addEventListener("click", () => showMap());
+};

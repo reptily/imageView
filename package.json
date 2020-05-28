@@ -1,6 +1,6 @@
 {
-  "name": "imageView",
-  "version": "1.0.0",
+  "name": "image_view",
+  "version": "1.1.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
