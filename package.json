@@ -20,7 +20,7 @@
     "electron": "^18.3.7"
   },
   "dependencies": {
-    "electron-packager": "^14.2.1",
+    "electron-packager": "^17.1.2",
     "fs": "0.0.1-security",
     "modify-exif": "0.0.1"
   }
